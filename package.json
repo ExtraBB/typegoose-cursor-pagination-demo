@@ -1,0 +1,48 @@
+{
+    "name": "typegoose-cursor-pagination-demo",
+    "version": "1.0.0",
+    "description": "Typegoose cursor pagination demo project",
+    "engines": {
+        "node": "16.13.2",
+        "npm": "8.1.2"
+    },
+    "author": "Bruno Carvalhal",
+    "license": "MIT",
+    "scripts": {
+        "start": "node dist/server.js",
+        "build": "tsc -p tsconfig.json",
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "test": "jest --forceExit --coverage --verbose --testEnvironment=node --runInBand --config jest.config.json",
+        "debug": "npm run watch-debug",
+        "start-debug": "nodemon --inspect dist/server.js",
+        "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+        "watch-node": "nodemon dist/server.js",
+        "watch-test": "npm run test -- --watchAll",
+        "watch-ts": "tsc -w",
+        "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run start-debug\""
+    },
+    "dependencies": {
+        "@typegoose/typegoose": "^9.7.0",
+        "axios": "^0.26.0",
+        "body-parser": "^1.19.2",
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "express-rate-limit": "^6.3.0",
+        "helmet": "^5.0.2",
+        "mongoose": "^6.2.4",
+        "winston": "^3.6.0",
+        "winston-request-logger": "^1.0.7"
+    },
+    "devDependencies": {
+        "@types/body-parser": "^1.19.2",
+        "@types/express": "^4.17.13",
+        "@types/node": "^17.0.21",
+        "@typescript-eslint/eslint-plugin": "^5.13.0",
+        "@typescript-eslint/parser": "^5.13.0",
+        "concurrently": "^7.0.0",
+        "eslint": "^8.10.0",
+        "eslint-config-prettier": "^8.5.0",
+        "nodemon": "^2.0.15",
+        "typescript": "^4.6.2"
+    }
+}
