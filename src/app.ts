@@ -4,8 +4,8 @@ import bodyParser from "body-parser";
 import helmet from "helmet";
 
 import { requestLogger } from "./services/log";
-import { getUsers } from "./controllers/UserController";
-import * as UserRoutes from "./routes/UserRoutes";
+import { getUsers } from "./controllers/user-controller";
+import * as UserRoutes from "./routes/user-routes";
 
 // Create express
 export const createApp = () => {
